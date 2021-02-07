@@ -452,47 +452,47 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
 # }
 # Start-Process $onedrive -NoNewWindow
 
-# Uninstall default Microsoft applications (Edit: Comment due to later uninstall of all apps. May remove)
-Write-Host "Uninstalling default Microsoft applications..."
-Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingSports" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingWeather" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Getstarted" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MicrosoftSolitaireCollection" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Office.OneNote" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.People" | Remove-AppxPackage 
-Get-AppxPackage "Microsoft.SkypeApp" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Windows.Photos" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsAlarms" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsCamera" | Remove-AppxPackage
-Get-AppxPackage "microsoft.windowscommunicationsapps" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsMaps" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsPhone" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ZuneMusic" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ZuneVideo" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ConnectivityStore" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Office.Sway" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Messaging" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.CommsPhone" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MicrosoftStickyNotes" | Remove-AppxPackage
-Get-AppxPackage "9E2F88E3.Twitter" | Remove-AppxPackage
-Get-AppxPackage "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Wallet" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ScreenSketch" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.GetHelp" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage
-#Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" | Remove-AppPackage
+## Uninstall default Microsoft applications (Edit: Comment due to later uninstall of all apps. May remove)
+#Write-Host "Uninstalling default Microsoft applications..."
+#Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.BingSports" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.BingWeather" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Getstarted" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.MicrosoftSolitaireCollection" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Office.OneNote" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.People" | Remove-AppxPackage 
+#Get-AppxPackage "Microsoft.SkypeApp" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Windows.Photos" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsAlarms" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsCamera" | Remove-AppxPackage
+#Get-AppxPackage "microsoft.windowscommunicationsapps" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsMaps" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsPhone" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
+##Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.ZuneMusic" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.ZuneVideo" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.ConnectivityStore" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Office.Sway" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Messaging" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.CommsPhone" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.MicrosoftStickyNotes" | Remove-AppxPackage
+#Get-AppxPackage "9E2F88E3.Twitter" | Remove-AppxPackage
+#Get-AppxPackage "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Wallet" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.ScreenSketch" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.GetHelp" | Remove-AppxPackage
+##Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage
+##Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" | Remove-AppPackage
 
 # Install default Microsoft applications
 # Add-AppxPackage -DisableDevelopmentMode -Register "$($(Get-AppXPackage -AllUsers "Microsoft.3DBuilder").InstallLocation)\AppXManifest.xml"
@@ -787,16 +787,16 @@ $apps = @(
     "Microsoft.Advertising.Xaml"
 )
 
-#Keep in mind, not everything will be deleted, as not all apps are allowed to be removed.
-foreach ($app in $apps) {
-    Write-Output "Trying to remove $app"
-
-    Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage -AllUsers | Out-Null
-
-    Get-AppXProvisionedPackage -Online |
-        Where-Object DisplayName -EQ $app |
-        Remove-AppxProvisionedPackage -Online
-}
+##Keep in mind, not everything will be deleted, as not all apps are allowed to be removed.
+#foreach ($app in $apps) {
+#    Write-Output "Trying to remove $app"
+#
+#    Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage -AllUsers | Out-Null
+#
+#    Get-AppXProvisionedPackage -Online |
+#        Where-Object DisplayName -EQ $app |
+#        Remove-AppxProvisionedPackage -Online
+#}
 
 # Prevents Apps from re-installing
 $cdm = @(
@@ -949,8 +949,8 @@ foreach ($regAlias in $regAliases){
     IF(!(Test-Path -Path $keyPath)) { 
         New-Item -Path $basePath -Name "Explorer"
     }
-#    Set-ItemProperty -Path $keyPath -Name "LockedStartLayout" -Value 1
-#    Set-ItemProperty -Path $keyPath -Name "StartLayoutFile" -Value $layoutFile
+    Set-ItemProperty -Path $keyPath -Name "LockedStartLayout" -Value 1
+    Set-ItemProperty -Path $keyPath -Name "StartLayoutFile" -Value $layoutFile
 }
 
 #Restart Explorer, open the start menu (necessary to load the new layout), and give it a few seconds to process
