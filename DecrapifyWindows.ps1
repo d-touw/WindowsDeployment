@@ -494,6 +494,7 @@ Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage | Out-Null
 Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage | Out-Null
 #Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" | Remove-AppPackage
 
+clear
 
 # Install default Microsoft applications
 # Add-AppxPackage -DisableDevelopmentMode -Register "$($(Get-AppXPackage -AllUsers "Microsoft.3DBuilder").InstallLocation)\AppXManifest.xml"
