@@ -455,6 +455,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
 # Uninstall default Microsoft applications (Edit: Comment due to later uninstall of all apps. May remove)
 Write-Host "Uninstalling default Microsoft applications..."
 Get-AppxPackage "*3D*" | Remove-AppxPackage
+Get-AppxPackage "*xbox*" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.YourPhone" | Remove-AppPackage
 Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage
@@ -473,7 +474,7 @@ Get-AppxPackage "microsoft.windowscommunicationsapps" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.WindowsMaps" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.WindowsPhone" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.ZuneMusic" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.ZuneVideo" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage
@@ -493,7 +494,7 @@ Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage
-#Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" | Remove-AppPackage
+Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" | Remove-AppPackage
 
 # Install default Microsoft applications
 # Add-AppxPackage -DisableDevelopmentMode -Register "$($(Get-AppXPackage -AllUsers "Microsoft.3DBuilder").InstallLocation)\AppXManifest.xml"
@@ -694,8 +695,8 @@ $apps = @(
     "Microsoft.WindowsPhone"
     "Microsoft.WindowsSoundRecorder"
     #"Microsoft.WindowsStore"   # can't be re-installed
-    #"Microsoft.Xbox.TCUI"
-    #"Microsoft.XboxApp"
+    "Microsoft.Xbox.TCUI"
+    "Microsoft.XboxApp"
     "Microsoft.XboxGameOverlay"
     "Microsoft.XboxGamingOverlay"
     "Microsoft.XboxSpeechToTextOverlay"
@@ -705,7 +706,7 @@ $apps = @(
     "Microsoft.Windows.CloudExperienceHost"
     "Microsoft.Windows.ContentDeliveryManager"
     "Microsoft.Windows.PeopleExperienceHost"
-    #"Microsoft.XboxGameCallableUI"
+    "Microsoft.XboxGameCallableUI"
 
     # Threshold 2 apps
     "Microsoft.CommsPhone"
@@ -883,7 +884,6 @@ Write-Output "Waiting for explorer to complete loading"
 Start-Sleep 10
 
 Write-Output "Removing additional OneDrive leftovers"
-Remove-Item -Recurse -Force "$env:WinDir\WinSxS\*onedrive-setup*"
 foreach ($item in (Get-ChildItem "$env:WinDir\WinSxS\*onedrive*")) {
     Takeown-Folder $item.FullName
     Remove-Item -Recurse -Force $item.FullName
@@ -1068,8 +1068,8 @@ reg add "HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Pe
 reg add "HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "SystemUsesLightTheme" /t "REG_DWORD" /d "0" /f
 
 #Install Hyper-v and WSL
-Install-WindowsOptionalFeature -Online -FeatureName *Hyper-V*
-Install-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 
 ##########
 # Restart
