@@ -268,6 +268,13 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 # Show Task View button
 # Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton"
 
+# Remove "Talk with Cortana"
+Write-Host "Remove 'Talk with Cortana'"
+if (!(Test-Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search')){
+    Net-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
+    }
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Type DWord -Value 0
+
 # Show small icons in taskbar
 Write-Host "Showing small icons in taskbar..."
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSmallIcons" -Type DWord -Value 1
@@ -317,6 +324,10 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 # }
 # Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu" -Name "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" -Type DWord -Value 0
 # Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Name "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" -Type DWord -Value 0
+
+# Remove Microsoft Edge shortcut from Desktop
+Write-Host "Remove Microsoft Edge shortcut from Desktop for all users"
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" -Name "DisableEdgeDesktopShortcutCreation" -Type Dword -Value 1
 
 # Hide Computer shortcut from desktop
 # Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu" -Name "{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
@@ -459,6 +470,7 @@ Get-AppxPackage "Microsoft.ConnectivityStore" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.Office.Sway" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.Messaging" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.CommsPhone" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.MicrosoftStickyNotes" | Remove-AppxPackage
 Get-AppxPackage "9E2F88E3.Twitter" | Remove-AppxPackage
 Get-AppxPackage "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage
@@ -1048,8 +1060,8 @@ reg add "HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Pe
 ##########
 # Restart
 ##########
-#Write-Host
-#Write-Host "Press any key to restart your system..." -ForegroundColor Black -BackgroundColor White
-#$key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-#Write-Host "Restarting..."
-#Restart-Computer
+Write-Host
+Write-Host "Press any key to restart your system..." -ForegroundColor Black -BackgroundColor White
+$key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+Write-Host "Restarting..."
+Restart-Computer
