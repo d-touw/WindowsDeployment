@@ -281,7 +281,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 # Remove "Talk with Cortana"
 Write-Host "Remove 'Talk with Cortana'"
 if (!(Test-Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search')){
-    Net-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
+    New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
     }
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Type DWord -Value 0
 
