@@ -21,6 +21,7 @@ send me a pull request.
 - [maci0](https://github.com/maci0)
 - [narutards](https://github.com/narutards)
 - [tumpio](https://github.com/tumpio)
+- [W4RH4WK](https://github.com/W4RH4WK)
 
 ## License
 
