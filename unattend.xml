@@ -38,6 +38,13 @@
                     </LocalAccount>
                 </LocalAccounts>
             </UserAccounts>
+            <FirstLogonCommands>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>reg add &quot;HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce&quot; /v &quot;disabledmwappushservice&quot; /t REG_SZ /d &quot;sc config dmwappushservice start= disabled&quot;</CommandLine>
+                    <RequiresUserInput>false</RequiresUserInput>
+                    <Order>1</Order>
+                </SynchronousCommand>
+            </FirstLogonCommands>
         </component>
     </settings>
     <cpi:offlineImage cpi:source="wim:e:/images/win%2010%2020h2/install.wim#Windows 10 Pro" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
