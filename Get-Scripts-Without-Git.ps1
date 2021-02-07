@@ -1,5 +1,5 @@
 New-Item -ItemType "Directory" -Name DecrapifyWindows
-cd UncrapifyWindows
+cd DecrapifyWindows
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/d-touw/WindowsDeployment/main/DecrapifyWindows.ps1" -OutFile DecrapifyWindows.ps1
 New-Item -ItemType "Directory" -Name lib
 cd lib
