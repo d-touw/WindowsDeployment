@@ -272,6 +272,13 @@ Set-Service "HomeGroupProvider" -StartupType Disabled
 Write-Host "Showing small icons in taskbar..."
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSmallIcons" -Type DWord -Value 1
 
+# Remove Search, Cortana and taskview from taskbar
+Write-Host "Remove Search, Cortana and taskview from taskbar"
+New-FolderForced -Path "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer"
+New-FolderForced -Path "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AllUpView"
+Set-ItemProperty -Path "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AllUpView" -Name "Enabled" -Type DWord -Value 0
+Set-ItemProperty -Path "HKCU\Software\Microsoft\Windows\CurrentVersion\Search\" -Name "SearchboxTaskbar" -Type DWord -Value 0
+
 # Show large icons in taskbar
 # Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSmallIcons"
 
@@ -431,45 +438,45 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 # }
 # Start-Process $onedrive -NoNewWindow
 
-# Uninstall default Microsoft applications
-Write-Host "Uninstalling default Microsoft applications..."
-Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingSports" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingWeather" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Getstarted" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MicrosoftSolitaireCollection" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Office.OneNote" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.People" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.SkypeApp" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Windows.Photos" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsAlarms" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsCamera" | Remove-AppxPackage
-Get-AppxPackage "microsoft.windowscommunicationsapps" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsMaps" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsPhone" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
+# Uninstall default Microsoft applications (Edit: Comment due to later uninstall of all apps. May remove)
+#Write-Host "Uninstalling default Microsoft applications..."
+#Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.BingSports" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.BingWeather" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Getstarted" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.MicrosoftSolitaireCollection" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Office.OneNote" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.People" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.SkypeApp" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Windows.Photos" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsAlarms" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsCamera" | Remove-AppxPackage
+#Get-AppxPackage "microsoft.windowscommunicationsapps" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsMaps" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsPhone" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
 #Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ZuneMusic" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ZuneVideo" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ConnectivityStore" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Office.Sway" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Messaging" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.CommsPhone" | Remove-AppxPackage
-Get-AppxPackage "9E2F88E3.Twitter" | Remove-AppxPackage
-Get-AppxPackage "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Wallet" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ScreenSketch" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.GetHelp" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.ZuneMusic" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.ZuneVideo" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.ConnectivityStore" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Office.Sway" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Messaging" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.CommsPhone" | Remove-AppxPackage
+#Get-AppxPackage "9E2F88E3.Twitter" | Remove-AppxPackage
+#Get-AppxPackage "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.Wallet" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.ScreenSketch" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.GetHelp" | Remove-AppxPackage
 #Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage
+#Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage
 #Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" | Remove-AppPackage
 
 
@@ -568,7 +575,7 @@ Set-ItemProperty -Path "HKCR:\Applications\photoviewer.dll\shell\open\DropTarget
 $services = @(
     "diagnosticshub.standardcollector.service" # Microsoft (R) Diagnostics Hub Standard Collector Service
     "DiagTrack"                                # Diagnostics Tracking Service
-    "dmwappushservice"                         # WAP Push Message Routing Service (see known issues)
+    #"dmwappushservice"                         # WAP Push Message Routing Service (see known issues)
     "lfsvc"                                    # Geolocation Service
     "MapsBroker"                               # Downloaded Maps Manager
     "NetTcpPortSharing"                        # Net.Tcp Port Sharing Service
@@ -581,9 +588,9 @@ $services = @(
     "WMPNetworkSvc"                            # Windows Media Player Network Sharing Service
     #"wscsvc"                                  # Windows Security Center Service
     #"WSearch"                                 # Windows Search
-    "XblAuthManager"                           # Xbox Live Auth Manager
-    "XblGameSave"                              # Xbox Live Game Save Service
-    "XboxNetApiSvc"                            # Xbox Live Networking Service
+    #"XblAuthManager"                           # Xbox Live Auth Manager
+    #"XblGameSave"                              # Xbox Live Game Save Service
+    #"XboxNetApiSvc"                            # Xbox Live Networking Service
     "ndu"                                      # Windows Network Data Usage Monitor
     # Services which cannot be disabled
     #"WdNisSvc"
@@ -598,7 +605,7 @@ foreach ($service in $services) {
 #   Description:
 # This script optimizes Windows updates by disabling automatic download and
 # seeding updates to other computers.
-#
+
 Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
 
 Write-Output "Disable automatic download and installation of Windows updates"
@@ -647,8 +654,8 @@ $apps = @(
     "Microsoft.BingSports"
     "Microsoft.BingTranslator"
     "Microsoft.BingWeather"
-    #"Microsoft.FreshPaint"
-    "Microsoft.GamingServices"
+    "Microsoft.FreshPaint"
+    #"Microsoft.GamingServices"
     "Microsoft.Microsoft3DViewer"
     "Microsoft.WindowsFeedbackHub"
     "Microsoft.MicrosoftOfficeHub"
@@ -742,7 +749,7 @@ $apps = @(
     "ShazamEntertainmentLtd.Shazam"
     "SlingTVLLC.SlingTV"
     "SpotifyAB.SpotifyMusic"
-    #"TheNewYorkTimes.NYTCrossword"
+    "TheNewYorkTimes.NYTCrossword"
     "ThumbmunkeysLtd.PhototasticCollage"
     "TuneIn.TuneInRadio"
     "WinZipComputing.WinZipUniversal"
