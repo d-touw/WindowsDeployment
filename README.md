@@ -3,6 +3,12 @@
 These files are meant for Windows 10 Pro (20h2), based on the video from Craft Computing (https://www.youtube.com/watch?v=PdKMiFKGQuc).
 
 Please keep in mind I made some changes to the scripts, where I want Paint3D gone too, don't uninstall xbox related apps and some other minor tweaks.
+This script **can not** be undone (at least not easily!).
+
+I've created a script to get the files needed without git. Use the following powershell command to download the files from the main branch:
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/d-touw/WindowsDeployment/main/Get-Scripts-Without-Git.ps1" -OutFile Get-Scripts-Without-Git.ps1
+
+Make sure you change the execution policy to run the scripts.
 
 ## Liability
 
