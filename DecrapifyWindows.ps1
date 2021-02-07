@@ -454,7 +454,8 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
 
 # Uninstall default Microsoft applications (Edit: Comment due to later uninstall of all apps. May remove)
 Write-Host "Uninstalling default Microsoft applications..."
-Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage
+Get-AppxPackage "*3D*" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.YourPhone" | Remove-AppPackage
 Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.BingSports" | Remove-AppxPackage
@@ -487,7 +488,7 @@ Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.Wallet" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.ScreenSketch" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.GetHelp" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
 Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage
@@ -1065,6 +1066,10 @@ reg add "HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes" /
 reg add "HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /f
 reg add "HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "AppsUseLightTheme" /t "REG_DWORD" /d "0" /f
 reg add "HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "SystemUsesLightTheme" /t "REG_DWORD" /d "0" /f
+
+#Install Hyper-v and WSL
+Install-WindowsOptionalFeature -Online -FeatureName *Hyper-V*
+Install-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 
 ##########
 # Restart
