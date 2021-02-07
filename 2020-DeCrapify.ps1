@@ -248,22 +248,22 @@ Set-Service "HomeGroupProvider" -StartupType Disabled
 # Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "NoDriveTypeAutoRun"
 
 # Disable Sticky keys prompt
-# Write-Host "Disabling Sticky keys prompt..."
-# Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\StickyKeys" -Name "Flags" -Type String -Value "506"
+Write-Host "Disabling Sticky keys prompt..."
+Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\StickyKeys" -Name "Flags" -Type String -Value "506"
 
 # Enable Sticky keys prompt
 # Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\StickyKeys" -Name "Flags" -Type String -Value "510"
 
 # Hide Search button / box
-# Write-Host "Hiding Search Box / Button..."
-# Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 0
+Write-Host "Hiding Search Box / Button..."
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode" -Type DWord -Value 0
 
 # Show Search button / box
 # Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" -Name "SearchboxTaskbarMode"
 
 # Hide Task View button
-# Write-Host "Hiding Task View button..."
-# Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type DWord -Value 0
+Write-Host "Hiding Task View button..."
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton" -Type DWord -Value 0
 
 # Show Task View button
 # Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowTaskViewButton"
@@ -271,13 +271,6 @@ Set-Service "HomeGroupProvider" -StartupType Disabled
 # Show small icons in taskbar
 Write-Host "Showing small icons in taskbar..."
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSmallIcons" -Type DWord -Value 1
-
-# Remove Search, Cortana and taskview from taskbar
-Write-Host "Remove Search, Cortana and taskview from taskbar"
-New-FolderForced -Path "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer"
-New-FolderForced -Path "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AllUpView"
-Set-ItemProperty -Path "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AllUpView" -Name "Enabled" -Type DWord -Value 0
-Set-ItemProperty -Path "HKCU\Software\Microsoft\Windows\CurrentVersion\Search\" -Name "SearchboxTaskbar" -Type DWord -Value 0
 
 # Show large icons in taskbar
 # Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSmallIcons"
@@ -400,7 +393,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 # Disable OneDrive
 #Write-Host "Disabling OneDrive..."
 #If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive")) {
-	#New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" | Out-Null
+#	New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" | Out-Null
 #}
 #Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSyncNGSC" -Type DWord -Value 1
 
@@ -439,44 +432,44 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 # Start-Process $onedrive -NoNewWindow
 
 # Uninstall default Microsoft applications (Edit: Comment due to later uninstall of all apps. May remove)
-#Write-Host "Uninstalling default Microsoft applications..."
-#Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.BingSports" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.BingWeather" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.Getstarted" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.MicrosoftSolitaireCollection" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.Office.OneNote" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.People" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.SkypeApp" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.Windows.Photos" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.WindowsAlarms" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.WindowsCamera" | Remove-AppxPackage
-#Get-AppxPackage "microsoft.windowscommunicationsapps" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.WindowsMaps" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.WindowsPhone" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
+Write-Host "Uninstalling default Microsoft applications..."
+Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.BingSports" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.BingWeather" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.Getstarted" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.MicrosoftSolitaireCollection" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.Office.OneNote" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.People" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.SkypeApp" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.Windows.Photos" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.WindowsAlarms" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.WindowsCamera" | Remove-AppxPackage
+Get-AppxPackage "microsoft.windowscommunicationsapps" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.WindowsMaps" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.WindowsPhone" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
 #Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.ZuneMusic" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.ZuneVideo" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.ConnectivityStore" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.Office.Sway" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.Messaging" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.CommsPhone" | Remove-AppxPackage
-#Get-AppxPackage "9E2F88E3.Twitter" | Remove-AppxPackage
-#Get-AppxPackage "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.Wallet" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.ScreenSketch" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.GetHelp" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.ZuneMusic" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.ZuneVideo" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.ConnectivityStore" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.Office.Sway" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.Messaging" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.CommsPhone" | Remove-AppxPackage
+Get-AppxPackage "9E2F88E3.Twitter" | Remove-AppxPackage
+Get-AppxPackage "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.Wallet" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.ScreenSketch" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.GetHelp" | Remove-AppxPackage
 #Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage
 #Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" | Remove-AppPackage
 
 
@@ -1055,8 +1048,8 @@ reg add "HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Pe
 ##########
 # Restart
 ##########
-Write-Host
-Write-Host "Press any key to restart your system..." -ForegroundColor Black -BackgroundColor White
-$key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-Write-Host "Restarting..."
-Restart-Computer
+#Write-Host
+#Write-Host "Press any key to restart your system..." -ForegroundColor Black -BackgroundColor White
+#$key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+#Write-Host "Restarting..."
+#Restart-Computer
