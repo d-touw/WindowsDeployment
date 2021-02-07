@@ -54,6 +54,9 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" 
 # Disable Location Tracking
 Write-Host "Disabling Location Tracking..."
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Sensor\Overrides\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}" -Name "SensorPermissionState" -Type DWord -Value 0
+If (!(Test-Path "HKLM:\System\CurrentControlSet\Services\lfsvc\Service\Configuration")) {
+	New-Item -Path "HKLM:\System\CurrentControlSet\Services\lfsvc\Service\Configuration" -Force | Out-Null
+}
 Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Services\lfsvc\Service\Configuration" -Name "Status" -Type DWord -Value 0
 
 # Enable Location Tracking
@@ -104,6 +107,13 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization\TrainedDat
 
 # Restrict Windows Update P2P only to local network
 Write-Host "Restricting Windows Update P2P only to local network..."
+If (!(Test-Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization")) {
+	New-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization" -Force | Out-Null
+}
+If (!(Test-Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config")) {
+	New-Item -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Force | Out-Null
+}
+
 Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" -Name "DODownloadMode" -Type DWord -Value 1
 If (!(Test-Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization")) {
 	New-Item -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization" | Out-Null
@@ -1060,8 +1070,8 @@ reg add "HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Pe
 ##########
 # Restart
 ##########
-Write-Host
-Write-Host "Press any key to restart your system..." -ForegroundColor Black -BackgroundColor White
-$key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-Write-Host "Restarting..."
-Restart-Computer
+#Write-Host
+#Write-Host "Press any key to restart your system..." -ForegroundColor Black -BackgroundColor White
+#$key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+#Write-Host "Restarting..."
+#Restart-Computer
