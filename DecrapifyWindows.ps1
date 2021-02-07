@@ -454,44 +454,44 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
 
 # Uninstall default Microsoft applications (Edit: Comment due to later uninstall of all apps. May remove)
 Write-Host "Uninstalling default Microsoft applications..."
-Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingSports" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.BingWeather" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Getstarted" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MicrosoftSolitaireCollection" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Office.OneNote" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.People" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.SkypeApp" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Windows.Photos" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsAlarms" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsCamera" | Remove-AppxPackage
-Get-AppxPackage "microsoft.windowscommunicationsapps" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsMaps" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsPhone" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ZuneMusic" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ZuneVideo" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ConnectivityStore" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Office.Sway" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Messaging" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.CommsPhone" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MicrosoftStickyNotes" | Remove-AppxPackage
-Get-AppxPackage "9E2F88E3.Twitter" | Remove-AppxPackage
-Get-AppxPackage "king.com.CandyCrushSodaSaga" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.Wallet" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.ScreenSketch" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.GetHelp" | Remove-AppxPackage
-#Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage
-Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage
+Get-AppxPackage "Microsoft.3DBuilder" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.BingFinance" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.BingNews" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.BingSports" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.BingWeather" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.Getstarted" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.MicrosoftOfficeHub" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.MicrosoftSolitaireCollection" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.Office.OneNote" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.People" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.SkypeApp" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.Windows.Photos" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.WindowsAlarms" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.WindowsCamera" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "microsoft.windowscommunicationsapps" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.WindowsMaps" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.WindowsPhone" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.WindowsSoundRecorder" | Remove-AppxPackage | Out-Null
+#Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.ZuneMusic" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.ZuneVideo" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.AppConnector" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.ConnectivityStore" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.Office.Sway" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.Messaging" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.CommsPhone" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.MicrosoftStickyNotes" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "9E2F88E3.Twitter" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "king.com.CandyCrushSodaSaga" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.WindowsFeedbackHub" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.Wallet" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.ScreenSketch" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.GetHelp" | Remove-AppxPackage | Out-Null
+#Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.MixedReality.Portal" | Remove-AppxPackage | Out-Null
+Get-AppxPackage "Microsoft.MSPaint" | Remove-AppxPackage | Out-Null
 #Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" | Remove-AppPackage
 
 
@@ -621,7 +621,7 @@ foreach ($service in $services) {
 # This script optimizes Windows updates by disabling automatic download and
 # seeding updates to other computers.
 
-Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
+Import-Module -DisableNameChecking $PSScriptRoot\lib\New-FolderForced.psm1
 
 Write-Output "Disable automatic download and installation of Windows updates"
 New-FolderForced -Path "HKLM:\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\WindowsUpdate\AU"
@@ -652,8 +652,8 @@ icacls "$env:WinDIR\System32\MusNotificationUx.exe" /deny "$($EveryOne):(X)"
 # This script removes unwanted Apps that come with Windows. If you  do not want
 # to remove certain Apps comment out the corresponding lines below.
 
-Import-Module -DisableNameChecking $PSScriptRoot\..\lib\take-own.psm1
-Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
+Import-Module -DisableNameChecking $PSScriptRoot\lib\take-own.psm1
+Import-Module -DisableNameChecking $PSScriptRoot\lib\New-FolderForced.psm1
 
 Write-Output "Elevating privileges for this process"
 do {} until (Elevate-Privileges SeTakeOwnershipPrivilege)
@@ -788,10 +788,11 @@ $apps = @(
     "Microsoft.Advertising.Xaml"
 )
 
+#Keep in mind, not everything will be deleted, as not all apps are allowed to be removed.
 foreach ($app in $apps) {
     Write-Output "Trying to remove $app"
 
-    Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage -AllUsers
+    Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage -AllUsers | Out-Null
 
     Get-AppXProvisionedPackage -Online |
         Where-Object DisplayName -EQ $app |
@@ -829,9 +830,6 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" 
 
 #   Description:
 # This script will remove and disable OneDrive integration.
-
-Import-Module -DisableNameChecking $PSScriptRoot\..\lib\New-FolderForced.psm1
-Import-Module -DisableNameChecking $PSScriptRoot\..\lib\take-own.psm1
 
 Write-Output "Kill OneDrive process"
 taskkill.exe /F /IM "OneDrive.exe"
@@ -904,33 +902,33 @@ net accounts /maxpwage:0
 
 # This script removes all Start Menu Tiles from the .default user #
 
-Set-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -Value '<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '  <LayoutOptions StartTileGroupCellWidth="6" />'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '  <DefaultLayoutOverride>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '    <StartLayoutCollection>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '      <defaultlayout:StartLayout GroupCellWidth="6" />'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '    </StartLayoutCollection>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '  </DefaultLayoutOverride>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '    <CustomTaskbarLayoutCollection>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '      <defaultlayout:TaskbarLayout>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '        <taskbar:TaskbarPinList>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '          <taskbar:UWA AppUserModelID="Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge" />'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '          <taskbar:DesktopApp DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\File Explorer.lnk" />'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '        </taskbar:TaskbarPinList>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '      </defaultlayout:TaskbarLayout>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '    </CustomTaskbarLayoutCollection>'
-Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '</LayoutModificationTemplate>'
-
-$START_MENU_LAYOUT = @"
-<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
-    <LayoutOptions StartTileGroupCellWidth="6" />
-    <DefaultLayoutOverride>
-        <StartLayoutCollection>
-            <defaultlayout:StartLayout GroupCellWidth="6" />
-        </StartLayoutCollection>
-    </DefaultLayoutOverride>
-</LayoutModificationTemplate>
-"@
+#Set-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -Value '<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '  <LayoutOptions StartTileGroupCellWidth="6" />'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '  <DefaultLayoutOverride>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '    <StartLayoutCollection>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '      <defaultlayout:StartLayout GroupCellWidth="6" />'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '    </StartLayoutCollection>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '  </DefaultLayoutOverride>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '    <CustomTaskbarLayoutCollection>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '      <defaultlayout:TaskbarLayout>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '        <taskbar:TaskbarPinList>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '          <taskbar:UWA AppUserModelID="Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge" />'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '          <taskbar:DesktopApp DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\System Tools\File Explorer.lnk" />'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '        </taskbar:TaskbarPinList>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '      </defaultlayout:TaskbarLayout>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '    </CustomTaskbarLayoutCollection>'
+#Add-Content -Path 'C:\Users\Default\AppData\Local\Microsoft\Windows\Shell\DefaultLayouts.xml' -value '</LayoutModificationTemplate>'
+#
+#$START_MENU_LAYOUT = @"
+#<LayoutModificationTemplate xmlns:defaultlayout="http://schemas.microsoft.com/Start/2014/FullDefaultLayout" xmlns:start="http://schemas.microsoft.com/Start/2014/StartLayout" Version="1" xmlns:taskbar="http://schemas.microsoft.com/Start/2014/TaskbarLayout" xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
+#    <LayoutOptions StartTileGroupCellWidth="6" />
+#    <DefaultLayoutOverride>
+#        <StartLayoutCollection>
+#            <defaultlayout:StartLayout GroupCellWidth="6" />
+#        </StartLayoutCollection>
+#    </DefaultLayoutOverride>
+#</LayoutModificationTemplate>
+#"@
 
 $layoutFile="C:\Windows\StartMenuLayout.xml"
 
