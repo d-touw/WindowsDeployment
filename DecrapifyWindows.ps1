@@ -455,7 +455,6 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
 # Uninstall default Microsoft applications (Edit: Comment due to later uninstall of all apps. May remove)
 Write-Host "Uninstalling default Microsoft applications..."
 Get-AppxPackage "*3D*" -AllUsers | Remove-AppxPackage
-Get-AppxPackage "*xbox*" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.YourPhone" | Remove-AppPackage
 Get-AppxPackage "Microsoft.BingFinance" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.BingNews" -AllUsers | Remove-AppxPackage
@@ -494,7 +493,7 @@ Get-AppxPackage "Microsoft.XboxGameOverlay" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.MixedReality.Portal" -AllUsers | Remove-AppxPackage
 Get-AppxPackage "Microsoft.MSPaint" -AllUsers | Remove-AppxPackage
-Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" -AllUsers | Remove-AppxPackage
+#Get-AppBackgroundTask "Microsoft.XboxIdentityProvider" -AllUsers | Remove-AppxPackage
 
 # Install default Microsoft applications
 # Add-AppxPackage -DisableDevelopmentMode -Register "$($(Get-AppXPackage -AllUsers "Microsoft.3DBuilder").InstallLocation)\AppXManifest.xml"
