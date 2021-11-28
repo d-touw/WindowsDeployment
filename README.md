@@ -14,11 +14,6 @@ Make sure you change the execution policy to run the scripts.
 
 **All scripts are provided as-is and you use them at your own risk.**
 
-## Contribute
-
-I would be happy to extend the collection of scripts. Just open an issue or
-send me a pull request.
-
 ### Thanks To
 
 - [10se1ucgo](https://github.com/10se1ucgo)
